@@ -1,6 +1,7 @@
 package domain
 
-class DomainEvent {
+import domain.model.JDomainEvent
 
+abstract class DomainEvent extends JDomainEvent {
 
 }
