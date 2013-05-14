@@ -14,56 +14,44 @@
 
 package domain.model;
 
-import domain.DomainEvent;
-
 import java.util.Date;
 
-public class TestableDomainEvent extends DomainEvent {
+public class AnotherTestableDomainEvent implements JDomainEvent {
 
     private int eventVersion;
-    private long id;
-    private String name;
     private Date occurredOn;
+    private double value;
 
-    public TestableDomainEvent(long anId, String aName) {
+    public AnotherTestableDomainEvent(double aValue) {
         super();
 
         this.setEventVersion(1);
-        this.setId(anId);
-        this.setName(aName);
         this.setOccurredOn(new Date());
+        this.setValue(aValue);
     }
 
     public int eventVersion() {
         return eventVersion;
     }
 
-    public long id() {
-        return id;
-    }
 
-    public String name() {
-        return name;
-    }
-
-    @Override
     public Date occurredOn() {
         return this.occurredOn;
     }
 
-    private void setEventVersion(int anEventVersion) {
-        this.eventVersion = anEventVersion;
+    public double value() {
+        return this.value;
     }
 
-    private void setId(long id) {
-        this.id = id;
-    }
-
-    private void setName(String name) {
-        this.name = name;
+    private void setEventVersion(int eventVersion) {
+        this.eventVersion = eventVersion;
     }
 
     private void setOccurredOn(Date occurredOn) {
         this.occurredOn = occurredOn;
+    }
+
+    private void setValue(double value) {
+        this.value = value;
     }
 }
